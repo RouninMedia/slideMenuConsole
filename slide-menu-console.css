@@ -1,0 +1,171 @@
+body {
+  background-color: rgb(191, 191, 255);
+}
+
+.openConsoleButton {
+  cursor: pointer;
+}
+
+.console .heading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101%;
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-size: 5vh;
+  line-height: 10vh;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: transform 0.6s linear;
+}
+
+.consoleIcon {
+  position: absolute;
+  top: 6px;
+  width: calc(10vh - 11px);
+  height: calc(10vh - 12px);
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  background-position: center;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.consoleIcon.\--back {
+  left: 6px;
+}
+
+.consoleIcon.\--close {
+  right: 6px;
+}
+
+.menu.slide .consoleIcon.\--back {
+  display: none;
+}
+
+.console {
+  position: fixed;
+  top: 10vh;
+  left: 20vw;
+  width: 60vw;
+  height: 80vh;
+  color: rgb(255, 255, 255);
+  background-color: rgb(191, 191, 255);
+  border: 1.5vh solid rgb(255, 255, 255);
+  border-radius: 1.5vh;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  transform: translateY(100vh);
+  pointer-events: none;
+  transition: transform 0.6s ease-in-out;
+}
+
+.console.\--activated {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.console.\--activated.\--raised {
+  transform: translateY(0);
+}
+
+.console .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: calc(60vw - 2.90vh);
+  height: calc(80vh - 2.90vh);
+  padding: 12vh 12px 6px;
+  box-sizing: border-box;
+  transform: translateX(calc(60vw - 1.5vh));
+  transition: transform 0.4s ease-out;
+}
+
+.console .slide.red {
+  background-color: red;
+}
+
+.console .slide.orange {
+  background-color: orange;
+}
+
+.console .slide.yellow {
+  background-color: yellow;
+}
+
+.console .slide.green {
+  background-color: green;
+}
+
+.console .slide.blue {
+  background-color: blue;
+}
+
+.console .slide.indigo {
+  background-color: indigo;
+}
+
+.console .slide.violet {
+  background-color: violet;
+}
+
+.slide.menu,
+.console .slide.\--activeSlide {
+  transform: translateX(0);
+}
+
+.console .slide.\--activeSlide ~ .slide.menu {
+  transform: translateX(calc(1.5vh - 60vw));
+}
+
+.slideButton {
+  flex: 0 1 25%;
+  margin: 24px;
+  cursor: pointer;
+}
+
+.backIcon {
+  transform: rotate(270deg);
+}
+
+#backIconPath {
+  fill: rgb(255, 255, 255);
+  transform: translateY(-108px);
+}
+
+#closeIconGroup rect {
+  fill: rgb(255, 255, 255);
+  opacity: 1;
+}
+
+#closeIconGroup {
+  transform-origin: 50% 50%;
+  transform: rotate(45deg);
+}
+
+.veil {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.6s ease-out;
+}
+
+.veil.\--activated {
+  opacity: 1;
+}
